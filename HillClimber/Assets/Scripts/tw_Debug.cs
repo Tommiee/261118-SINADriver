@@ -17,5 +17,9 @@ public class tw_Debug : MonoBehaviour {
 		if (tw_inputManager.E ()) {
 			print ("E");
 		}
+
+		if (tw_inputManager.Escape ()) {
+			print ("Escape");
+		}
 	}
 }
