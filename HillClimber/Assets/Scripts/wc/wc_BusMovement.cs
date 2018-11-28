@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class wc_WheelJointCarMovement : MonoBehaviour
+public class wc_BusMovement : MonoBehaviour
 {
 	public WheelJoint2D frontwheel;
 	public WheelJoint2D backwheel;
@@ -19,13 +19,18 @@ public class wc_WheelJointCarMovement : MonoBehaviour
 	public bool TractionFront = true;
 	public bool TractionBack = true;
 
-
 	public float carRotationSpeed = 250;
 
+	private tw_InputManager tw_inputManager;
 	// Update is called once per frame
+	void Start()
+	{
+		tw_inputManager = GetComponent<tw_InputManager>();
+	}
+
 	void Update()
 	{
-		if (Input.GetAxisRaw("Vertical") > 0)
+		if (tw_inputManager.Up())
 		{
 			if (TractionFront)
 			{
@@ -43,7 +48,7 @@ public class wc_WheelJointCarMovement : MonoBehaviour
 			}
 
 		}
-		else if (Input.GetAxisRaw("Vertical") < 0)
+		else if (tw_inputManager.Down())
 		{
 			if (TractionFront)
 			{
@@ -68,9 +73,6 @@ public class wc_WheelJointCarMovement : MonoBehaviour
 			frontwheel.useMotor = false;
 
 		}
-
-
-
 
 		if (Input.GetAxisRaw("Horizontal") != 0)
 		{
