@@ -12,13 +12,14 @@ public class BatteryAmount : MonoBehaviour {
 	public Image sliderImage;
 	public float decreaseAmount = 0.01f;
 	public float timeToDecrease = 0.1f;
+	public float batteryAmount = 100f;
 
 	public delegate void FuelIsEmpty();
 	public event FuelIsEmpty fuelIsEmptyEvent;
 
 	void Start() {
 		slider = GetComponent<Slider>();
-		sliderValue = slider.value;
+		sliderValue = batteryAmount / 100;
 		StartCoroutine(DecreaseBatteryAmount());
 	}
 
