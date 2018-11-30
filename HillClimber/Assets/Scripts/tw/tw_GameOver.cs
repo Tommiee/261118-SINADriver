@@ -6,7 +6,9 @@ using UnityEngine;
 public class tw_GameOver : MonoBehaviour {
 
 	[SerializeField]
-	LayerMask layerMask;
+	private LayerMask layerMask;
+	[SerializeField]
+	private string nextScene;
 
 	// Update is called once per frame
 	void Update () {
@@ -21,5 +23,6 @@ public class tw_GameOver : MonoBehaviour {
 
 	void GameOver(){
 		print ("hit something");
+		SceneManager.LoadScene (nextScene);
 	}
 }
