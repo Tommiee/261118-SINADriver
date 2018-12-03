@@ -2235,7 +2235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderImage: {fileID: 909593448}
-  decreaseAmount: 10
+  decreaseAmount: 0.1
   timeToDecrease: 1
   batteryAmount: 100
 --- !u!114 &809621683
@@ -4759,6 +4759,7 @@ GameObject:
   - component: {fileID: 1961785201}
   - component: {fileID: 1961785202}
   - component: {fileID: 1961785204}
+  - component: {fileID: 1961785205}
   m_Layer: 0
   m_Name: BusFrame
   m_TagString: Player
@@ -4931,6 +4932,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   activateObject: {fileID: 506011485}
+--- !u!114 &1961785205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1961785196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ab159eba5cce243a4f000a228d69d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decreaseBy: 0.1
+  batteryAmount: {fileID: 809621682}
 --- !u!1001 &1967410021
 Prefab:
   m_ObjectHideFlags: 0

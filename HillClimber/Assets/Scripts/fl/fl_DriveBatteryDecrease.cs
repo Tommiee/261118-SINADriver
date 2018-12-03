@@ -14,7 +14,7 @@ public class fl_DriveBatteryDecrease : MonoBehaviour {
     }
 	
 	void Update () {
-        if(tw_InputManager.Up()) {
+        if(tw_InputManager.Up() || tw_InputManager.Down()) {
             batteryAmount.AddAmount(-decreaseBy);
         }
 	}
