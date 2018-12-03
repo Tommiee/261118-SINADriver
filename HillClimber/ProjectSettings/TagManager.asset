@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Busframe
   - Battery
+  - Homeless
   layers:
   - Default
   - TransparentFX
