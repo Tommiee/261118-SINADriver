@@ -35,6 +35,8 @@ public class BatteryAmount : MonoBehaviour {
 			ChangeSliderValue(decreaseAmount);
 			yield return new WaitForSeconds(timeToDecrease);
 		}
+		// LOSE
+		GetComponent<tw_GameOver>().GameOver();
 		CallEvent();
 		yield return null;
 	}
