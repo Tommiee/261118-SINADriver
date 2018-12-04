@@ -7,9 +7,8 @@ using UnityEngine.UI;
 public class tw_GameOver : MonoBehaviour {
 
 	[SerializeField] private LayerMask layerMask;
-	public GameObject activateObject;
+	[SerializeField] private GameObject[] activateObjects;
 
-	// Update is called once per frame
 	void Update () {
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 5, layerMask);
 
@@ -21,10 +20,12 @@ public class tw_GameOver : MonoBehaviour {
 	}
 
 	public void GameOver(){
-		if (!activateObject.activeSelf)
-		{
-			activateObject.SetActive(true);
-			//Time.timeScale = 0;
+		for (int i = 0; i < activateObjects.Length; i++) {
+			if (!activateObjects[i].activeSelf)
+			{
+				print(activateObjects[i]);
+				activateObjects[i].SetActive(true);
+			}
 		}
 	}
 }
