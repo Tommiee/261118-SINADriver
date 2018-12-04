@@ -10,8 +10,10 @@ public class BatteryAmount : MonoBehaviour {
 
 	public Image sliderImage;
 	public float decreaseAmount = 1f;
-	public float timeToDecrease = 0.1f;
+	public float waitTime = 0.1f;
 	public float batteryAmount = 100f;
+	public float maxBatteryAmount = 100f;
+	public wc_Hotkeys hotkeys;
 
 	public delegate void FuelIsEmpty();
 	public event FuelIsEmpty fuelIsEmptyEvent;
@@ -19,17 +21,19 @@ public class BatteryAmount : MonoBehaviour {
 	void Start() {
 		slider = GetComponent<Slider>();
 		slider.value = ClampAmount(batteryAmount, 0, 1);
-		StartCoroutine(DecreaseBatteryAmount());
+		StartCoroutine(DecreaseBatteryAmount(decreaseAmount, waitTime));
 	}
 
 	void Update() {
 		LerpColor();
 	}
 
-	IEnumerator DecreaseBatteryAmount() {
+	IEnumerator DecreaseBatteryAmount(float decreaseAmount, float waitTime) {
 		while(batteryAmount > 0) {
-			ChangeSliderValue(decreaseAmount);
-			yield return new WaitForSeconds(timeToDecrease);
+			
+			if (!hotkeys.godmode) ChangeSliderValue(decreaseAmount);
+
+			yield return new WaitForSeconds(waitTime);
 		}
 		// LOSE
 		GetComponent<tw_GameOver>().GameOver();
@@ -39,7 +43,7 @@ public class BatteryAmount : MonoBehaviour {
 
 	public void ChangeSliderValue(float value) {
 		batteryAmount = batteryAmount - value;
-		slider.value = ClampAmount(batteryAmount, 0, 1);
+		slider.value = batteryAmount / maxBatteryAmount;
 	}
 
 	public void AddAmount(float value) {
@@ -47,7 +51,7 @@ public class BatteryAmount : MonoBehaviour {
 		if(batteryAmount > 100) {
 			batteryAmount = 100f;
 		}
-		slider.value = batteryAmount;
+		slider.value = batteryAmount / 100f;
 	}
 
 	private float ClampAmount(float amount, float min, float max) {

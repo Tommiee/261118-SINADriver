@@ -7,17 +7,17 @@ public class aj_BusCollision : MonoBehaviour {
 
 	BoxCollider2D collider;
 	
-	BatteryAmount batteryAmount;
+	BatteryAmount battery;
 
 	void Start() {
 		collider = GetComponent<BoxCollider2D>();
-		batteryAmount = FindObjectOfType<BatteryAmount>();
+		battery = FindObjectOfType<BatteryAmount>();
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag == "Battery") {
-			batteryAmount.AddAmount(25f);
+			battery.batteryAmount = battery.maxBatteryAmount;
 			Destroy(col.gameObject);
 		}
     }

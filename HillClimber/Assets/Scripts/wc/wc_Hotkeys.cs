@@ -9,6 +9,7 @@ public class wc_Hotkeys : MonoBehaviour {
 	public GameObject player;
 	public GameObject winText;
 	public GameObject loseText;
+	public bool godmode = true;
 
 	Vector3 startPos;
 	Quaternion startRot;
@@ -28,6 +29,12 @@ public class wc_Hotkeys : MonoBehaviour {
 			winText.SetActive(false);
 			loseText.SetActive(false);
 			Time.timeScale = 1;
+		}
+		
+		if (Input.GetKeyDown(KeyCode.G))
+		{
+			godmode = !godmode;
+			Debug.Log("Godmode is " + godmode);
 		}
 	}
 }

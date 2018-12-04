@@ -5,8 +5,9 @@ using UnityEngine;
 public class fl_DriveBatteryDecrease : MonoBehaviour {
 
     [SerializeField] private float decreaseBy = .1f;
-
     [SerializeField] private BatteryAmount batteryAmount;
+	[SerializeField] private wc_Hotkeys hotkeys;
+
     private tw_InputManager tw_InputManager;
 
 	void Start () {
@@ -15,7 +16,10 @@ public class fl_DriveBatteryDecrease : MonoBehaviour {
 	
 	void Update () {
         if(tw_InputManager.Up() || tw_InputManager.Down()) {
-            batteryAmount.AddAmount(-decreaseBy);
+
+			if (hotkeys.godmode) return;
+
+			batteryAmount.AddAmount(-decreaseBy);
         }
 	}
 }
