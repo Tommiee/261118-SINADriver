@@ -7,16 +7,22 @@ using UnityEngine.UI;
 public class BatteryAmount : MonoBehaviour {
 
 	Slider slider;
+	GameManager gameManager;
 
 	public Image sliderImage;
 	public float decreaseAmount = 1f;
 	public float waitTime = 0.1f;
 	public float batteryAmount = 100f;
 	public float maxBatteryAmount = 100f;
-	public wc_Hotkeys hotkeys;
+	public Hotkeys hotkeys;
 
 	public delegate void FuelIsEmpty();
 	public event FuelIsEmpty fuelIsEmptyEvent;
+
+	private void Awake()
+	{
+		gameManager = FindObjectOfType<GameManager>();
+	}
 
 	void Start() {
 		slider = GetComponent<Slider>();
@@ -36,7 +42,7 @@ public class BatteryAmount : MonoBehaviour {
 			yield return new WaitForSeconds(waitTime);
 		}
 		// LOSE
-		GetComponent<tw_GameOver>().GameOver();
+		gameManager.Stop(slider.gameObject);
 		CallEvent();
 		yield return null;
 	}
