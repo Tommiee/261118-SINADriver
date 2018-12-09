@@ -105,8 +105,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderImage: {fileID: 114355258836130976}
   decreaseAmount: 1
-  timeToDecrease: 1
+  waitTime: 0.1
   batteryAmount: 100
+  maxBatteryAmount: 100
+  hotkeys: {fileID: 0}
 --- !u!114 &114355258836130976
 MonoBehaviour:
   m_ObjectHideFlags: 1
