@@ -9,7 +9,6 @@ public class BusCollision : MonoBehaviour {
 	GameManager gameManager;
 	Data data;
 
-
 	BatteryAmount battery;
 	[SerializeField] private LayerMask layerMask;
 
@@ -28,7 +27,7 @@ public class BusCollision : MonoBehaviour {
 
 		if (hit.collider != null)
 		{
-			gameManager.Stop(this.gameObject);
+			gameManager.ActivateSwitch(gameManager.loseText.gameObject);
 		}
 	}
 
@@ -43,6 +42,11 @@ public class BusCollision : MonoBehaviour {
 		{
 			data.AddMoney(5);
 			Destroy(col.gameObject);
+		}
+
+		if (col.gameObject.tag == "Finish")
+		{
+			gameManager.ActivateSwitch(gameManager.winText.gameObject);
 		}
 	}
 }

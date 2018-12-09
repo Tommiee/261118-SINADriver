@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
-	public void Stop(GameObject activateObject)
+	public void ActivateSwitch(GameObject activateObject)
 	{
 		if (!activateObject.activeSelf)
 		{

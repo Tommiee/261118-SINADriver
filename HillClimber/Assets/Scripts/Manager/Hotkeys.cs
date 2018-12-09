@@ -9,6 +9,7 @@ public class Hotkeys : MonoBehaviour {
 	public GameObject player;
 	public GameObject winText;
 	public GameObject loseText;
+	public BatteryAmount battery;
 	public bool godmode = true;
 
 	Vector3 startPos;
@@ -28,6 +29,7 @@ public class Hotkeys : MonoBehaviour {
 			player.transform.rotation = startRot;
 			winText.SetActive(false);
 			loseText.SetActive(false);
+			battery.batteryAmount = battery.maxBatteryAmount;
 			Time.timeScale = 1;
 		}
 		
