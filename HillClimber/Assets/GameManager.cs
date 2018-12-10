@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-	public Text winText;
-	public Text loseText;
+	public GameObject winPanel;
+	public GameObject losePanel;
 
 	// Use this for initialization
 	void Start () {
@@ -25,10 +25,5 @@ public class GameManager : MonoBehaviour {
 			activateObject.SetActive(true);
 			//Time.timeScale = 0;
 		}
-	}
-
-	public void Lose()
-	{
-		
 	}
 }

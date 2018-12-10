@@ -27,7 +27,7 @@ public class BusCollision : MonoBehaviour {
 
 		if (hit.collider != null)
 		{
-			gameManager.ActivateSwitch(gameManager.loseText.gameObject);
+			gameManager.ActivateSwitch(gameManager.losePanel.gameObject);
 		}
 	}
 
@@ -46,7 +46,7 @@ public class BusCollision : MonoBehaviour {
 
 		if (col.gameObject.tag == "Finish")
 		{
-			gameManager.ActivateSwitch(gameManager.winText.gameObject);
+			gameManager.ActivateSwitch(gameManager.winPanel.gameObject);
 		}
 	}
 }

@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Hotkeys : MonoBehaviour {
 
 	public GameObject player;
-	public GameObject winText;
-	public GameObject loseText;
+	public GameObject winPanel;
+	public GameObject losePanel;
 	public BatteryAmount battery;
 	public bool godmode = true;
 
@@ -27,8 +27,8 @@ public class Hotkeys : MonoBehaviour {
 		{
 			player.transform.position = startPos;
 			player.transform.rotation = startRot;
-			winText.SetActive(false);
-			loseText.SetActive(false);
+			winPanel.SetActive(false);
+			losePanel.SetActive(false);
 			battery.batteryAmount = battery.maxBatteryAmount;
 			Time.timeScale = 1;
 		}
