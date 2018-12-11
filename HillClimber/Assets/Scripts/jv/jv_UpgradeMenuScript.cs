@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class jv_UpgradeMenuScript : MonoBehaviour {
+
+    const int MAX_LEVEL = 3;
+
     public UpgradeData upgradeData;
+    public List<UpgradeForm> motorUpgrade = new List<UpgradeForm>();
+
+    public void MotorUpgrade() {
+        if(upgradeData.motorLevel < MAX_LEVEL) {
+            UpgradeForm data = motorUpgrade[upgradeData.motorLevel];
+            Debug.Log(data.value + " - " + data.cost);
+            upgradeData.motorLevel++;
+        }
+    }
     
-	// Use this for initialization
-	void Start () {
-
-        upgradeData.motorLevel = 1;
-
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
     public void Reset()
     {
         upgradeData.motorLevel = 0;
@@ -25,5 +25,5 @@ public class jv_UpgradeMenuScript : MonoBehaviour {
         upgradeData.boostLevel = false;
         upgradeData.currencyLevel = 0;
         upgradeData.solarPanelsLevel = false;
-}
+    }
 }
