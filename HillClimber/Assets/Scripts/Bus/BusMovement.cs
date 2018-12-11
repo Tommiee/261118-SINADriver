@@ -9,8 +9,8 @@ public class BusMovement : MonoBehaviour
 	JointMotor2D motorFront;
 	JointMotor2D motorBack;
 
-	public float speedF = 1000;
-	public float speedB = 1000;
+	public float speedF;
+	public float speedB;
 
 	public float torqueF = 100;
 	public float torqueB = 100;
@@ -22,6 +22,11 @@ public class BusMovement : MonoBehaviour
 	public float carRotationSpeed = 250;
 
 	public InputManager inputManager;
+
+	void Start() {
+		speedF = PlayerPrefs.GetInt("Motor", 1500);
+		speedB = PlayerPrefs.GetInt("Motor", 1500);
+	}
 
 	void Update()
 	{

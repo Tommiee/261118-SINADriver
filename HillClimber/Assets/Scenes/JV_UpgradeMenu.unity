@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 462984852}
   - component: {fileID: 462984851}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Battery button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -498,7 +498,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 462984852}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1800120070}
+        m_MethodName: BatteryUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &462984852
@@ -547,7 +558,7 @@ GameObject:
   - component: {fileID: 505694995}
   - component: {fileID: 505694994}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Solar Panel button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -610,7 +621,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 505694995}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1800120070}
+        m_MethodName: SolarPanelUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &505694995
@@ -659,7 +681,7 @@ GameObject:
   - component: {fileID: 580830367}
   - component: {fileID: 580830366}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Wheels button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,7 +744,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 580830367}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1800120070}
+        m_MethodName: WheelsUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &580830367
@@ -988,7 +1021,7 @@ GameObject:
   - component: {fileID: 1011492290}
   - component: {fileID: 1011492289}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Currency button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1051,7 +1084,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1011492290}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1800120070}
+        m_MethodName: CurrencyUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1011492290
@@ -1530,7 +1574,7 @@ GameObject:
   - component: {fileID: 1574493147}
   - component: {fileID: 1574493146}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Motor button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1595,7 +1639,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1800120070}
-        m_MethodName: UpgradeMotorLevel
+        m_MethodName: MotorUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1831,7 +1875,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeData: {fileID: 11400000, guid: b62217ed6a05ec144b71252abb510d1d, type: 2}
-  motorLevel: 000000000000000000000000
+  motorLevels: []
+  wheelsLevels:
+  - value: 2
+    cost: 0
+  - value: 3
+    cost: 0
+  - value: 4
+    cost: 0
+  batteryLevels: []
+  currencyLevels: []
+  boostCost: 0
+  solarPanelCost: 0
+  tires: {fileID: 6200000, guid: 2af706df6e006eb46861cd642ea505d0, type: 2}
 --- !u!114 &1969521741 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114379263574708446, guid: 5bd9bd98d79f6224ea76d98e76b52daa,
@@ -2005,7 +2061,7 @@ GameObject:
   - component: {fileID: 2103088342}
   - component: {fileID: 2103088341}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Fireworks button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2068,7 +2124,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2103088342}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1800120070}
+        m_MethodName: FireworkUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2103088342
