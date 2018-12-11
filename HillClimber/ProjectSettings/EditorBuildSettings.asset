@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/JV_UpgradeMenu.unity
+    guid: 1fa35d9aace6c9b4e91991dc1508d75a
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

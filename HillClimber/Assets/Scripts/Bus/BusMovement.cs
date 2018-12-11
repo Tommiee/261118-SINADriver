@@ -21,12 +21,7 @@ public class BusMovement : MonoBehaviour
 
 	public float carRotationSpeed = 250;
 
-	private InputManager inputManager;
-	// Update is called once per frame
-	void Start()
-	{
-		inputManager = GetComponent<InputManager>();
-	}
+	public InputManager inputManager;
 
 	void Update()
 	{
