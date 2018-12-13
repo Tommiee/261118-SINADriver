@@ -20095,6 +20095,7 @@ MonoBehaviour:
   TractionFront: 1
   TractionBack: 1
   carRotationSpeed: 500
+  inputManager: {fileID: 497320931}
 --- !u!114 &1961785203
 MonoBehaviour:
   m_ObjectHideFlags: 0
