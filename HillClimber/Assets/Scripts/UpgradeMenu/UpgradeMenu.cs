@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class UpgradeMenu : MonoBehaviour
 {
@@ -99,6 +99,10 @@ public class UpgradeMenu : MonoBehaviour
         upgradeData.currencyLevel = 0;
         upgradeData.solarPanelsLevel = false;
         tires.friction = 1;
+    }
+
+    public void Play(string scene) {
+        SceneManager.LoadScene(scene);
     }
 
     private void Save(string name, int value) {

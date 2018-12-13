@@ -26,6 +26,10 @@ public class BusMovement : MonoBehaviour
 	void Start() {
 		speedF = PlayerPrefs.GetInt("Motor", 1500);
 		speedB = PlayerPrefs.GetInt("Motor", 1500);
+		if(speedF == 1 || speedB == 1) {
+			speedF = 1500;
+			speedB = 1500;
+		}
 	}
 
 	void Update()
