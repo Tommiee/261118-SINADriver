@@ -7,7 +7,7 @@ using UnityEditor;
 public class UpgradeMenu : MonoBehaviour
 {
     public UpgradeData upgradeData;
-    private const int MAX_LEVEL = 3;
+    private const int MAX_LEVEL = 1;
     Data data;
 
     public List<UpgradeForm> motorLevels = new List<UpgradeForm>();
