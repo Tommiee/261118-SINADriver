@@ -24,6 +24,14 @@ public class MoneyCount : MonoBehaviour {
 		{
 			zero = ": ";
 		}
+		else if (data.Money >= 100)
+		{
+			zero = ": 0";
+		}
+		else if (data.Money >= 1000)
+		{
+			zero = ": 00";
+		}
 		moneyText.text = zero + data.Money.ToString();
 	}
 }

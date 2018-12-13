@@ -11,6 +11,7 @@ public class BusCollision : MonoBehaviour {
 
 	BatteryAmount battery;
 	[SerializeField] private LayerMask layerMask;
+	[SerializeField] private int moneyPerPoor = 10;
 
 	void Start() {
 		collider = GetComponent<BoxCollider2D>();
@@ -40,13 +41,14 @@ public class BusCollision : MonoBehaviour {
 
 		if (col.gameObject.tag == "Poor")
 		{
-			data.AddMoney(5);
+			data.AddMoney(moneyPerPoor);
 			Destroy(col.gameObject);
 		}
 
 		if (col.gameObject.tag == "Finish")
 		{
 			gameManager.ActivateSwitch(gameManager.winPanel.gameObject);
+			Time.timeScale = 1f;
 		}
 	}
 }

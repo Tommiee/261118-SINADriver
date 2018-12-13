@@ -5,6 +5,7 @@ public class BusMovement : MonoBehaviour
 {
 	public WheelJoint2D frontwheel;
 	public WheelJoint2D backwheel;
+	public InputManager inputManager;
 
 	JointMotor2D motorFront;
 	JointMotor2D motorBack;
@@ -21,12 +22,6 @@ public class BusMovement : MonoBehaviour
 
 	public float carRotationSpeed = 250;
 
-	private InputManager inputManager;
-	// Update is called once per frame
-	void Start()
-	{
-		inputManager = GetComponent<InputManager>();
-	}
 
 	void Update()
 	{
