@@ -24,9 +24,9 @@ public class MenuOptions : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-    public void Shop()
+    public void LoadScene(string name)
     {
-        SceneManager.LoadScene("JV_UpgradeMenu");
+        SceneManager.LoadScene(name);
     }
 
     public void Resume(GameObject menu)

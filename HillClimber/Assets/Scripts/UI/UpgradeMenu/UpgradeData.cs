@@ -10,5 +10,6 @@ public class UpgradeData : ScriptableObject
     public bool boostLevel;
     public int currencyLevel;
     public bool solarPanelsLevel;
+	public int moneyAmount;
 
 }

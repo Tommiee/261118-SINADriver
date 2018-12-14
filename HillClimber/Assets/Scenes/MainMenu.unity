@@ -456,6 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2146559508}
   - component: {fileID: 1015629942}
+  - component: {fileID: 2146559509}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -477,3 +478,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146559509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2146559507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f862bd3d88226e843a767f5afd3f0282, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeData: {fileID: 11400000, guid: b62217ed6a05ec144b71252abb510d1d, type: 2}
+  motorLevels: []
+  wheelsLevels: []
+  batteryLevels: []
+  currencyLevels: []
+  boostCost: 0
+  solarPanelCost: 0
+  tires: {fileID: 6200000, guid: 2af706df6e006eb46861cd642ea505d0, type: 2}

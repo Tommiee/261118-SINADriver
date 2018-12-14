@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(UpgradeMenu))]
 public class MainMenu : MonoBehaviour
 {
+	private void Start()
+	{
+		GetComponent<UpgradeMenu>().Reset();
+	}
 
 	public void Play()
 	{

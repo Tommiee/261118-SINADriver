@@ -5,26 +5,26 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class BusCollision : MonoBehaviour {
 
-	BoxCollider2D collider;
-	GameManager gameManager;
-	Data data;
-
-	BatteryAmount battery;
 	[SerializeField] private LayerMask layerMask;
 	[SerializeField] private int moneyPerPoor = 10;
+
+	public UpgradeData upgradeData;
+
+	BoxCollider2D collider;
+	GameManager gameManager;
+	BatteryAmount battery;
 
 	void Start() {
 		collider = GetComponent<BoxCollider2D>();
 		battery = FindObjectOfType<BatteryAmount>();
 		gameManager = FindObjectOfType<GameManager>();
-		data = FindObjectOfType<Data>();
 	}
 
 	private void Update()
 	{
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 5, layerMask);
 
-		//Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up) * 5);
+		Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up) * 5);
 
 		if (hit.collider != null)
 		{
@@ -41,14 +41,14 @@ public class BusCollision : MonoBehaviour {
 
 		if (col.gameObject.tag == "Poor")
 		{
-			data.AddMoney(moneyPerPoor);
+			upgradeData.moneyAmount += moneyPerPoor;
 			Destroy(col.gameObject);
 		}
 
 		if (col.gameObject.tag == "Finish")
 		{
 			gameManager.ActivateSwitch(gameManager.winPanel.gameObject);
-			Time.timeScale = 1f;
+			Time.timeScale = 0f;
 		}
 	}
 }

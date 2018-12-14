@@ -4,28 +4,25 @@ using UnityEngine;
 
 public class Data : MonoBehaviour {
 
-	[SerializeField] private float money = 0f;
+	public UpgradeData upgradeData;
 
-	public float Money {
+	[SerializeField] private int money = 0;
+
+	public int Money {
 		get
 		{
 			return money;	
 		}
 	}
 
-	// Use this for initialization
-	void Start () {
-		DontDestroyOnLoad(this.gameObject);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	private void Start()
+	{
+		money = upgradeData.moneyAmount;
 	}
 
 	public void AddMoney(int value)
 	{
 		money += value;
-		//Debug.Log(money);
+		upgradeData.moneyAmount = money;
 	}
 }
