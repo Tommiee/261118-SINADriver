@@ -17,4 +17,4 @@ MonoBehaviour:
   boostLevel: 1
   currencyLevel: 0
   solarPanelsLevel: 0
-  moneyAmount: 0
+  moneyAmount: 750
