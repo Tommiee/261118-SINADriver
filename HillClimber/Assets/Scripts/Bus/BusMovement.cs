@@ -22,10 +22,7 @@ public class BusMovement : MonoBehaviour
 
 	public float carRotationSpeed = 250;
 
-	public InputManager inputManager;
-
 	void Start() {
-        inputManager = getComponent<InputManager>();
 		speedF = PlayerPrefs.GetInt("Motor", 1500);
 		speedB = PlayerPrefs.GetInt("Motor", 1500);
 		if(speedF == 1 || speedB == 1) {
