@@ -168,8 +168,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 66d4246fc05f50b4f8e9d10f8b5db001, type: 3}
-    m_FontSize: 70
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -180,8 +180,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "--- Controls\r ---\nW, A, S, D - Movement\r\nE, SPACE - Interaction\r\nESCAPE
-    - Pause\r\nMOUSE - Navigate in the menus"
+  m_Text: "--- Controls\r ---\nW, A, S, D - Movement\r\nSPACE - Boost\nESCAPE - Pause\r\nMOUSE
+    - Navigate in the menus"
 --- !u!222 &291167799
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -734,11 +734,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 66d4246fc05f50b4f8e9d10f8b5db001, type: 3}
-    m_FontSize: 90
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -746,9 +746,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "The goal of the game is to get your bus to the finish. \nBut it is very
-    cold outside and people don\u2019t like to wait. \nYou need to help the people
-    every day, till Christmas is over.\r"
+  m_Text: "The goal of the game is to get your bus to the finish. \nBy driving past
+    the poor people to help them, you earn currency \nto upgrade your bus."
 --- !u!222 &1426618347
 CanvasRenderer:
   m_ObjectHideFlags: 0

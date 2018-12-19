@@ -170,7 +170,11 @@ public class UpgradeMenu : MonoBehaviour
 	{
 		image.color = upgradedColor;
 
-		if (form == null) return;
+		if (form == null)
+		{
+			boostCostUpgradeAmount.text = 0.ToString();
+			return;
+		}
 		form.cost = 0;
 	}
 }

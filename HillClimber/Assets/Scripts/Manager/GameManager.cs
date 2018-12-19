@@ -7,10 +7,16 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject winPanel;
 	public GameObject losePanel;
+	public UpgradeData upgradeData;
+	public PhysicsMaterial2D tires;
+	public GameObject booster;
 
 	// Use this for initialization
 	void Start () {
 		Time.timeScale = 1f;
+
+		if (upgradeData.gripLevel == 0) tires.friction = 1;
+		if (!upgradeData.boostLevel) booster.SetActive(false);
 	}
 
 	public void ActivateSwitch(GameObject activateObject)
