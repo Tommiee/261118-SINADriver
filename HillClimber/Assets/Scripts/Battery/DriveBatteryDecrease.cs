@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DriveBatteryDecrease : MonoBehaviour {
 
-    [SerializeField] private float decreaseBy = .1f;
+    [SerializeField] private float decreaseBy = .01f;
     [SerializeField] private BatteryAmount batteryAmount;
 	[SerializeField] private Hotkeys hotkeys;
 

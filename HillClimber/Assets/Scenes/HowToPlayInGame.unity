@@ -441,12 +441,12 @@ Prefab:
     - target: {fileID: 114498662026667530, guid: 35d3dc96a348a074b8ad37721993fb60,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114498662026667530, guid: 35d3dc96a348a074b8ad37721993fb60,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224032465268079252, guid: 35d3dc96a348a074b8ad37721993fb60,
         type: 2}
@@ -491,7 +491,31 @@ Prefab:
     - target: {fileID: 114767214080403832, guid: 35d3dc96a348a074b8ad37721993fb60,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: MainMenu
+      value: Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 1232179607852852, guid: 35d3dc96a348a074b8ad37721993fb60, type: 2}
+      propertyPath: m_Name
+      value: but_Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 114498662026667530, guid: 35d3dc96a348a074b8ad37721993fb60,
+        type: 2}
+      propertyPath: m_text
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 114498662026667530, guid: 35d3dc96a348a074b8ad37721993fb60,
+        type: 2}
+      propertyPath: m_textInfo.characterCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114498662026667530, guid: 35d3dc96a348a074b8ad37721993fb60,
+        type: 2}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114498662026667530, guid: 35d3dc96a348a074b8ad37721993fb60,
+        type: 2}
+      propertyPath: m_textInfo.wordCount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35d3dc96a348a074b8ad37721993fb60, type: 2}

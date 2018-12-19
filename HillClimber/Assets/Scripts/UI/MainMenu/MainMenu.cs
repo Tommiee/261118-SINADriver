@@ -3,17 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(UpgradeMenu))]
 public class MainMenu : MonoBehaviour
 {
+	public UpgradeData upgradeData;
+	public PhysicsMaterial2D tires;
+
 	private void Start()
 	{
-		GetComponent<UpgradeMenu>().Reset();
+		Reset();
 	}
 
-	public void Play()
+	public void LoadScene(string name)
 	{
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(name);
+	}
+
+	public void Reset()
+	{
+		upgradeData.motorLevel = 0;
+		upgradeData.gripLevel = 0;
+		upgradeData.batteryLevel = 0;
+		upgradeData.boostLevel = false;
+		upgradeData.currencyLevel = 0;
+		upgradeData.solarPanelsLevel = false;
+		upgradeData.moneyAmount = 0;
+		tires.friction = 0.5f;
 	}
 
 	public void Credits()

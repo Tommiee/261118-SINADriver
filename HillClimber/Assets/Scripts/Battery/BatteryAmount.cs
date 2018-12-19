@@ -15,6 +15,7 @@ public class BatteryAmount : MonoBehaviour {
 	public float batteryAmount = 100f;
 	public float maxBatteryAmount = 100f;
 	public Hotkeys hotkeys;
+	public UpgradeData upgradeData;
 
 	public delegate void FuelIsEmpty();
 	public event FuelIsEmpty fuelIsEmptyEvent;
@@ -28,6 +29,8 @@ public class BatteryAmount : MonoBehaviour {
 		slider = GetComponent<Slider>();
 		slider.value = ClampAmount(batteryAmount, 0, 1);
 		StartCoroutine(DecreaseBatteryAmount(decreaseAmount, waitTime));
+		if (upgradeData.batteryLevel == 0) return;
+		maxBatteryAmount = PlayerPrefs.GetFloat("Battery", 100);
 	}
 
 	void Update() {

@@ -24,12 +24,12 @@ public class MenuOptions : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-    public void LoadScene(string name)
-    {
-        SceneManager.LoadScene(name);
-    }
+	public void LoadScene(string name)
+	{
+		SceneManager.LoadScene(name);
+	}
 
-    public void Resume(GameObject menu)
+	public void Resume(GameObject menu)
     {
         menu.SetActive(false);
         Time.timeScale = 1f;

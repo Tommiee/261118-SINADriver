@@ -5,10 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class BusCollision : MonoBehaviour {
 
+	public UpgradeData upgradeData;
+	public Sprite happyPoorPerson;
+
 	[SerializeField] private LayerMask layerMask;
 	[SerializeField] private int moneyPerPoor = 10;
-
-	public UpgradeData upgradeData;
 
 	BoxCollider2D collider;
 	GameManager gameManager;
@@ -18,6 +19,9 @@ public class BusCollision : MonoBehaviour {
 		collider = GetComponent<BoxCollider2D>();
 		battery = FindObjectOfType<BatteryAmount>();
 		gameManager = FindObjectOfType<GameManager>();
+
+		if (upgradeData.currencyLevel == 0) return;
+		moneyPerPoor = PlayerPrefs.GetInt("Currency", 10);
 	}
 
 	private void Update()
@@ -42,7 +46,8 @@ public class BusCollision : MonoBehaviour {
 		if (col.gameObject.tag == "Poor")
 		{
 			upgradeData.moneyAmount += moneyPerPoor;
-			Destroy(col.gameObject);
+			col.GetComponent<BoxCollider2D>().enabled = false;
+			col.GetComponent<SpriteRenderer>().sprite = happyPoorPerson;
 		}
 
 		if (col.gameObject.tag == "Finish")

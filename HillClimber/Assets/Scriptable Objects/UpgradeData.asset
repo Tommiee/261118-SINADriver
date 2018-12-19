@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: UpgradeData
   m_EditorClassIdentifier: 
   motorLevel: 0
-  gripLevel: 0
+  gripLevel: 1
   batteryLevel: 0
-  boostLevel: 1
-  currencyLevel: 0
+  boostLevel: 0
+  currencyLevel: 1
   solarPanelsLevel: 0
-  moneyAmount: 0
+  moneyAmount: 200

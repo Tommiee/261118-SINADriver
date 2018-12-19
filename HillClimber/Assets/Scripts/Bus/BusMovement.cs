@@ -6,6 +6,7 @@ public class BusMovement : MonoBehaviour
 	public WheelJoint2D frontwheel;
 	public WheelJoint2D backwheel;
 	public InputManager inputManager;
+	public UpgradeData upgradeData;
 
 	JointMotor2D motorFront;
 	JointMotor2D motorBack;
@@ -23,12 +24,14 @@ public class BusMovement : MonoBehaviour
 	public float carRotationSpeed = 250;
 
 	void Start() {
-		//speedF = PlayerPrefs.GetInt("Motor", 1500);
-		//speedB = PlayerPrefs.GetInt("Motor", 1500);
 		if(speedF == 1 || speedB == 1) {
 			speedF = 1500;
 			speedB = 1500;
 		}
+
+		if (upgradeData.motorLevel == 0) return;
+		speedF = PlayerPrefs.GetInt("Motor", 1500);
+		speedB = PlayerPrefs.GetInt("Motor", 1500);
 	}
 
 	void Update()
