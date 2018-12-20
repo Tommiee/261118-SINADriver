@@ -8,13 +8,25 @@ public class MainMenu : MonoBehaviour
 	public UpgradeData upgradeData;
 	public PhysicsMaterial2D tires;
 
+	[SerializeField] private KeyCode readyKey;
+
+	// so people wont be replaying without repaying
+	bool ready;
+
 	private void Start()
 	{
 		Reset();
+		ready = false;
+	}
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(readyKey)) ready = true;
 	}
 
 	public void LoadScene(string name)
 	{
+		if (name == "Main" && !ready) return;
 		SceneManager.LoadScene(name);
 	}
 
@@ -27,6 +39,7 @@ public class MainMenu : MonoBehaviour
 		upgradeData.currencyLevel = 0;
 		upgradeData.solarPanelsLevel = false;
 		upgradeData.moneyAmount = 0;
+		upgradeData.triesLeft = upgradeData.maxTries;
 		tires.friction = 0.5f;
 	}
 

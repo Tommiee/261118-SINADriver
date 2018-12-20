@@ -7,6 +7,10 @@ public class MenuOptions : MonoBehaviour {
 
     public GameObject pauseMenu;
 	public InputManager inputScript;
+	public GameObject mainMenuVerificationPanel;
+	public GameObject upgradeMenuVerificationPanel;
+	public GameObject howToPlayPanel;
+	public UpgradeData upgradeData;
 
 	private bool gamePaused = false;
 
@@ -43,10 +47,20 @@ public class MenuOptions : MonoBehaviour {
         gamePaused = true;
     }
 
-    public void MainMenu()
+    public void MainMenuVerification(bool activate)
     {
-        SceneManager.LoadScene(0);
+		mainMenuVerificationPanel.SetActive(activate);
     }
 
-    public bool GetGamePaused() { return gamePaused; }
+	public void UpgradeMenuVerification(bool activate)
+	{
+		upgradeMenuVerificationPanel.SetActive(activate);
+	}
+
+	public void HowToPlay(bool activate)
+	{
+		howToPlayPanel.SetActive(activate);
+	}
+
+	public bool GetGamePaused() { return gamePaused; }
 }

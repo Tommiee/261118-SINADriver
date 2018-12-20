@@ -32,8 +32,15 @@ public class BusCollision : MonoBehaviour {
 
 		if (hit.collider != null)
 		{
-			gameManager.ActivateSwitch(gameManager.losePanel.gameObject);
 			Time.timeScale = 0;
+			if (upgradeData.triesLeft > 1)
+			{
+				gameManager.ActivateSwitch(gameManager.losePanel);
+			}
+			else
+			{
+				gameManager.ActivateSwitch(gameManager.gameOverPanel);
+			}
 		}
 	}
 

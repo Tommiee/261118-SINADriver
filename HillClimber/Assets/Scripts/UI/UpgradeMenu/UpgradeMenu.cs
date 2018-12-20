@@ -127,7 +127,7 @@ public class UpgradeMenu : MonoBehaviour
     public void FireworkUpgrade() {
         if(!upgradeData.boostLevel &&
             upgradeData.moneyAmount >= boostCost) {
-			IncreaseValue(upgradeData, boostCost);
+			IncreaseValue(upgradeData, -boostCost);
 			// Set Boost to true
 			Save("Boost", 1);
             upgradeData.boostLevel = true;
@@ -163,6 +163,7 @@ public class UpgradeMenu : MonoBehaviour
 
 	public void LoadScene(string name)
 	{
+		if (name == "Main") upgradeData.triesLeft--;
 		SceneManager.LoadScene(name);
 	}
 

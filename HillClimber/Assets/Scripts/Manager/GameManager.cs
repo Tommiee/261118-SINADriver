@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject winPanel;
 	public GameObject losePanel;
+	public GameObject gameOverPanel;
 	public UpgradeData upgradeData;
 	public PhysicsMaterial2D tires;
 	public GameObject booster;
@@ -24,7 +25,6 @@ public class GameManager : MonoBehaviour {
 		if (!activateObject.activeSelf)
 		{
 			activateObject.SetActive(true);
-			//Time.timeScale = 0;
 		}
 	}
 }

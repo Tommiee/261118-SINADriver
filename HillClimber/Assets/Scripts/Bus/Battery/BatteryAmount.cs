@@ -44,9 +44,17 @@ public class BatteryAmount : MonoBehaviour {
 
 			yield return new WaitForSeconds(waitTime);
 		}
+
 		// LOSE
-		gameManager.ActivateSwitch(gameManager.losePanel.gameObject);
 		Time.timeScale = 0;
+		if (upgradeData.triesLeft > 1)
+		{
+			gameManager.ActivateSwitch(gameManager.losePanel);
+		}
+		else
+		{
+			gameManager.ActivateSwitch(gameManager.gameOverPanel);
+		}
 		CallEvent();
 		yield return null;
 	}

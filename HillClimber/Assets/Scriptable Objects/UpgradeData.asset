@@ -14,7 +14,9 @@ MonoBehaviour:
   motorLevel: 0
   gripLevel: 0
   batteryLevel: 0
-  boostLevel: 1
+  boostLevel: 0
   currencyLevel: 0
   solarPanelsLevel: 0
-  moneyAmount: 320
+  moneyAmount: 0
+  triesLeft: 5
+  maxTries: 5

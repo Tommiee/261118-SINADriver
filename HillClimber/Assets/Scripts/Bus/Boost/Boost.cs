@@ -8,7 +8,7 @@ public class Boost : MonoBehaviour {
     public UpgradeData upgradeData;
 	public BoostAmount boostAmountScript;
 
-	private Rigidbody2D busFrame;
+	public Rigidbody2D busFrame;
 	
     public float boostForce;
     public float boostAmount;
@@ -17,7 +17,6 @@ public class Boost : MonoBehaviour {
 	public float boostDecreaseAmount = 0.5f;
 
     private void Start() {
-        busFrame = GetComponent<Rigidbody2D>();
 		boostAmount = maxBoostAmount;
     }
 
