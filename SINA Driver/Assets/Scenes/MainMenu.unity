@@ -38053,7 +38053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeData: {fileID: 11400000, guid: b62217ed6a05ec144b71252abb510d1d, type: 2}
   tires: {fileID: 6200000, guid: 2af706df6e006eb46861cd642ea505d0, type: 2}
-  readyKey: 265
+  readyKey: 0
 --- !u!4 &905406419
 Transform:
   m_ObjectHideFlags: 0

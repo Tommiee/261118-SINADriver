@@ -8,9 +8,8 @@ public class MainMenu : MonoBehaviour
 	public UpgradeData upgradeData;
 	public PhysicsMaterial2D tires;
 
+	// Ensures that people repay before they replay
 	[SerializeField] private KeyCode readyKey;
-
-	// so people wont be replaying without repaying
 	bool ready;
 
 	private void Start()
@@ -21,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(readyKey)) ready = true;
+		if (Input.GetKeyDown(readyKey) || readyKey == KeyCode.None) ready = true;
 	}
 
 	public void LoadScene(string name)
